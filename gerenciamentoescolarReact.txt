@@ -1,0 +1,84 @@
+Passo 1: Importar as bibliotecas necessárias
+
+O primeiro passo é importar as bibliotecas necessárias para o projeto. No caso deste código, importamos o React e os componentes View e Text do React Native.
+
+import React from 'react';
+import { View, Text } from 'react-native';
+Use o código com cuidado. Saiba mais
+Passo 2: Declarar a função principal
+
+A função principal do código é a GerenciamentoEscolar(). Esta função é responsável por renderizar a interface do usuário e calcular a situação dos alunos.
+
+export default function GerenciamentoEscolar() {
+Use o código com cuidado. Saiba mais
+Passo 3: Declarar a lista de alunos
+
+A próxima etapa é declarar a lista de alunos. Esta lista é um array de objetos, cada um representando um aluno. Cada objeto contém as seguintes propriedades:
+
+nome: o nome do aluno
+turma: a turma do aluno
+professor: o professor do aluno
+notas: as notas do aluno
+
+const alunos = [
+  {
+    nome: 'João',
+    turma: 'A',
+    professor: 'Maria',
+    notas: [8, 7, 6, 9],
+  },
+  {
+    nome: 'Maria',
+    turma: 'B',
+    professor: 'João',
+    notas: [7, 5, 6, 4],
+  },
+  // Adicione mais alunos aqui...
+];
+Use o código com cuidado. Saiba mais
+Passo 4: Renderizar a interface do usuário
+
+A interface do usuário é renderizada usando o componente View. Cada aluno é renderizado usando um componente View aninhado. Cada componente View aninhado contém os seguintes elementos:
+
+Um elemento Text com o nome do aluno
+Um elemento Text com a turma do aluno
+Um elemento Text com o professor do aluno
+Um elemento Text com as notas do aluno
+Um elemento Text com a situação do aluno
+
+return (
+  <View>
+    {alunos.map((aluno, index) => (
+      <View key={index}>
+        <Text>Nome: {aluno.nome}</Text>
+        <Text>Turma: {aluno.turma}</Text>
+        <Text>Professor: {aluno.professor}</Text>
+        <Text>Notas: {aluno.notas.join(', ')}</Text>
+        <Text>Situação: {calcularSituacao(aluno.notas)}</Text>
+        <Text>-----------------</Text>
+      </View>
+    ))}
+  </View>
+);
+Use o código com cuidado. Saiba mais
+Passo 5: Calcular a situação dos alunos
+
+A situação dos alunos é calculada usando a função calcularSituacao(). Esta função recebe um array de notas como parâmetro e retorna uma string com a situação do aluno.
+
+A função primeiro calcula a média das notas do aluno. Em seguida, usa a seguinte lógica para determinar a situação do aluno:
+
+Se a média for maior ou igual a 6, o aluno está aprovado.
+Se a média for maior ou igual a 4, o aluno está em recuperação.
+Se a média for menor que 4, o aluno está reprovado.
+
+function calcularSituacao(notas) {
+  const media = notas.reduce((acc, nota) => acc + nota, 0) / notas.length;
+
+  if (media >= 6) {
+    return 'Aprovado';
+  } else if (media >= 4) {
+    return 'Recuperação';
+  } else {
+    return 'Reprovado';
+  }
+}
