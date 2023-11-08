@@ -1,0 +1,93 @@
+
+Passo 1: Importar as bibliotecas necessárias
+
+O primeiro passo é importar as bibliotecas necessárias para o projeto. No caso deste código, importamos o React e os componentes View e Text do React Native.
+
+import React from 'react';
+import { View, Text } from 'react-native';
+
+Passo 2: Declarar a função principal
+
+A função principal do código é a Concessionaria(). Esta função é responsável por renderizar a interface do usuário.
+
+export default function Concessionaria() {
+
+Passo 3: Declarar as listas de carros
+
+A próxima etapa é declarar as listas de carros. Essas listas são arrays de objetos, cada um representando um carro. Cada objeto contém as seguintes propriedades:
+
+cor: a cor do carro
+portas: o número de portas do carro
+potencia: a potência do carro
+valor: o valor do carro
+
+const carrosNovos = [
+  {
+    cor: 'Azul',
+    portas: 4,
+    potencia: '1.4',
+    valor: 50000,
+  },
+  {
+    cor: 'Vermelho',
+    portas: 2,
+    potencia: '1.6',
+    valor: 60000,
+  },
+  // Adicione mais carros novos aqui...
+];
+
+const carrosUsados = [
+  {
+    ano: 2018,
+    cor: 'Prata',
+    portas: 4,
+    potencia: '1.8',
+    valor: 40000,
+  },
+  {
+    ano: 2017,
+    cor: 'Preto',
+    portas: 2,
+    potencia: '2.0',
+    valor: 35000,
+  },
+  // Adicione mais carros usados aqui...
+];
+
+Passo 4: Renderizar a interface do usuário
+
+A interface do usuário é renderizada usando o componente View. Cada lista de carros é renderizada usando um componente View aninhado. Cada componente View aninhado contém os seguintes elementos:
+
+Um elemento Text com a categoria dos carros (novos ou usados)
+Um elemento Text com a cor do carro
+Um elemento Text com o número de portas do carro
+Um elemento Text com a potência do carro
+Um elemento Text com o valor do carro
+
+return (
+  <View>
+    <Text>Carros Novos:</Text>
+    {carrosNovos.map((carro, index) => (
+      <View key={index}>
+        <Text>Cor: {carro.cor}</Text>
+        <Text>Portas: {carro.portas}</Text>
+        <Text>Potência: {carro.potencia}</Text>
+        <Text>Valor: R${carro.valor}</Text>
+        <Text>-----------------</Text>
+      </View>
+    ))}
+
+    <Text>Carros Usados:</Text>
+    {carrosUsados.map((carro, index) => (
+      <View key={index}>
+        <Text>Ano: {carro.ano}</Text>
+        <Text>Cor: {carro.cor}</Text>
+        <Text>Portas: {carro.portas}</Text>
+        <Text>Potência: {carro.potencia}</Text>
+        <Text>Valor: R${carro.valor}</Text>
+        <Text>-----------------</Text>
+      </View>
+    ))}
+  </View>
+);
