@@ -4,13 +4,13 @@ O primeiro passo é importar as bibliotecas necessárias para o projeto. No caso
 
 import React from 'react';
 import { View, Text } from 'react-native';
-Use o código com cuidado. Saiba mais
+
 Passo 2: Declarar a função principal
 
 A função principal do código é a GerenciamentoEscolar(). Esta função é responsável por renderizar a interface do usuário e calcular a situação dos alunos.
 
 export default function GerenciamentoEscolar() {
-Use o código com cuidado. Saiba mais
+
 Passo 3: Declarar a lista de alunos
 
 A próxima etapa é declarar a lista de alunos. Esta lista é um array de objetos, cada um representando um aluno. Cada objeto contém as seguintes propriedades:
@@ -35,7 +35,7 @@ const alunos = [
   },
   // Adicione mais alunos aqui...
 ];
-Use o código com cuidado. Saiba mais
+
 Passo 4: Renderizar a interface do usuário
 
 A interface do usuário é renderizada usando o componente View. Cada aluno é renderizado usando um componente View aninhado. Cada componente View aninhado contém os seguintes elementos:
@@ -60,7 +60,7 @@ return (
     ))}
   </View>
 );
-Use o código com cuidado. Saiba mais
+
 Passo 5: Calcular a situação dos alunos
 
 A situação dos alunos é calculada usando a função calcularSituacao(). Esta função recebe um array de notas como parâmetro e retorna uma string com a situação do aluno.
